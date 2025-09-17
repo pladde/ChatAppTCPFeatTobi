@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
-
-using System.Net;
-using System.Net.Sockets;
-
 
 namespace ChatApp
 {
@@ -15,18 +8,23 @@ namespace ChatApp
         private TcpClient client;
         private NetworkStream stream;
 
-        // TODO: Hier möchte ich eine Nachricht senden. WIP - APP stürtzt momentan ab
-        public void SendMessage(string message) 
+        public ChatService(TcpClient connectedClient)
         {
-            stream.Write(Encoding.ASCII.GetBytes(message), 0, message.Length);
+            client = connectedClient;
+            stream = client.GetStream();
         }
 
-        // TODO : Hier möchte ich eine Nachricht empfangen. WIP
-        public async Task<string> ReceiveMessageAsync() 
+        public void SendMessage(string message)
         {
-            stream = client.GetStream().ToString();
+            byte[] data = Encoding.ASCII.GetBytes(message);
+            stream.Write(data, 0, data.Length);
+        }
 
-            return stream;
+        public async Task<string> ReceiveMessageAsync()
+        {
+            byte[] data = new byte[256];
+            int bytes = await stream.ReadAsync(data);
+            return Encoding.ASCII.GetString(data, 0, bytes);
         }
     }
 }

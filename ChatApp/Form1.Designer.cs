@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            chatFrame = new ListBox();
+            ListBox chatFrame;
             chatInputFrame = new TextBox();
             btnSend = new Button();
             portFrame = new TextBox();
@@ -37,6 +37,7 @@
             lvlPort = new Label();
             btnConnect = new Button();
             btnStartServer = new Button();
+            chatFrame = new ListBox();
             SuspendLayout();
             // 
             // chatFrame
@@ -46,21 +47,21 @@
             chatFrame.Location = new Point(35, 76);
             chatFrame.Name = "chatFrame";
             chatFrame.Size = new Size(425, 289);
-            chatFrame.TabIndex = 0;
+            chatFrame.TabIndex = 999;
             // 
             // chatInputFrame
             // 
             chatInputFrame.Location = new Point(38, 380);
             chatInputFrame.Name = "chatInputFrame";
             chatInputFrame.Size = new Size(341, 23);
-            chatInputFrame.TabIndex = 1;
+            chatInputFrame.TabIndex = 5;
             // 
             // btnSend
             // 
             btnSend.Location = new Point(385, 380);
             btnSend.Name = "btnSend";
             btnSend.Size = new Size(75, 23);
-            btnSend.TabIndex = 2;
+            btnSend.TabIndex = 6;
             btnSend.Text = "send";
             btnSend.UseVisualStyleBackColor = true;
             btnSend.Click += BtnSend_Click;
@@ -70,14 +71,14 @@
             portFrame.Location = new Point(181, 34);
             portFrame.Name = "portFrame";
             portFrame.Size = new Size(53, 23);
-            portFrame.TabIndex = 3;
+            portFrame.TabIndex = 2;
             // 
             // ipAdressFrame
             // 
             ipAdressFrame.Location = new Point(35, 33);
             ipAdressFrame.Name = "ipAdressFrame";
             ipAdressFrame.Size = new Size(137, 23);
-            ipAdressFrame.TabIndex = 4;
+            ipAdressFrame.TabIndex = 1;
             // 
             // lblIPAddress
             // 
@@ -101,7 +102,7 @@
             btnConnect.Location = new Point(240, 34);
             btnConnect.Name = "btnConnect";
             btnConnect.Size = new Size(75, 23);
-            btnConnect.TabIndex = 2;
+            btnConnect.TabIndex = 3;
             btnConnect.Text = "connect";
             btnConnect.UseVisualStyleBackColor = true;
             btnConnect.Click += BtnConnect_Click;
@@ -111,7 +112,7 @@
             btnStartServer.Location = new Point(385, 33);
             btnStartServer.Name = "btnStartServer";
             btnStartServer.Size = new Size(75, 23);
-            btnStartServer.TabIndex = 2;
+            btnStartServer.TabIndex = 4;
             btnStartServer.Text = "start server";
             btnStartServer.UseVisualStyleBackColor = true;
             btnStartServer.Click += BtnStartServer_Click;

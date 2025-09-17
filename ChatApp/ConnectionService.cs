@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using System.Net;
 using System.Net.Sockets;
 
@@ -14,8 +9,9 @@ namespace ChatApp
 
         private TcpListener? server;
         private TcpClient? client;
-
         public event Action? Connected;
+
+        public TcpClient? Client => client;
 
         public bool IsConnected => client?.Connected ?? false;
 
