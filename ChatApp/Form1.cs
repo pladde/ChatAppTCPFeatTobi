@@ -28,6 +28,12 @@ namespace ChatApp
 
             if (conn.IsConnected)
             {
+                ChatService chat = new ChatService();
+                while (true)
+                {
+                    chat.ReceiveMessageAsync();
+                    Task.Delay(1000);
+                }
             }
             else
             {
